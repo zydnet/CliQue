@@ -17,13 +17,10 @@ export async function middleware(request: NextRequest) {
   const sessionToken = request.cookies.get('session_token')?.value
   const { pathname } = request.nextUrl
 
-  // Check if the path requires authentication
-  const isProtectedPath = protectedPaths.some((path) =>
-    pathname.startsWith(path)
-  )
-
-  // Check if the path is an auth path (login/register)
+  // This logic is correct for runtime checks
+  const isProtectedPath = protectedPaths.some((path) => pathname.startsWith(path))
   const isAuthPath = authPaths.some((path) => pathname.startsWith(path))
+
 
   if (isProtectedPath) {
     if (!sessionToken) {
@@ -58,14 +55,13 @@ export async function middleware(request: NextRequest) {
   return NextResponse.next()
 }
 
-// Configure which paths the middleware should run on
+
 export const config = {
   matcher: [
-    '/dashboard',
-    '/profile',
-    '/deals/create',
-    '/deals/edit',
+    '/dashboard/:path*', // Match dashboard and its sub-routes
+    '/profile/:path*',   // Match profile and its sub-routes
+    '/deals/:path*',     // Match all deal-related routes
     '/login',
     '/register',
   ],
-} 
+}
