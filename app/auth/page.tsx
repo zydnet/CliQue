@@ -205,7 +205,7 @@ export default function AuthPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 h-11"
+                    className="w-full bg-primary hover:bg-primary/90 text-white h-11"
                     disabled={loading}
                   >
                     {loading ? <LoadingSpinner size="sm" /> : "Sign In"}
@@ -356,7 +356,7 @@ export default function AuthPage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-primary-600 hover:bg-primary-700 dark:bg-primary-500 dark:hover:bg-primary-600 h-11"
+                    className="w-full bg-primary hover:bg-primary/90 text-white h-11"
                     disabled={loading}
                   >
                     {loading ? <LoadingSpinner size="sm" /> : "Create Account"}

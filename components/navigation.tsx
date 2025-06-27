@@ -162,7 +162,7 @@ export function Navigation() {
                 {!currentUser && (
                   <>
                     <Link href="/auth">
-                      <Button className={`text-sm ml-2 ${theme === 'light' ? 'text-primary' : 'text-white'}`}>Sign In</Button>
+                      <Button className={`text-sm ml-2 ${theme === 'light' ? 'text-white' : 'text-white'}`}>Sign In</Button>
                     </Link>
                   </>
                 )}
