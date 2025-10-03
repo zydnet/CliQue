@@ -79,6 +79,9 @@ export default function LandingSection() {
                 ? "text-primary border-primary hover:bg-secondary/10"
                 : "text-secondary border-secondary hover:bg-primary/10"
             }`}
+            onClick={() => {
+              router.push("/how-it-works");
+            }}
           >
             Learn How It Works
           </Button>
